@@ -1,0 +1,94 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
+
+@mltree_green: #3d441e;
+@mltree_green_highlight: #576321;
+
+html,
+body {
+	margin:0;
+	padding:0;
+	font-family: "Open Sans", sans-serif;
+}
+
+header {
+	background: @mltree_green;
+	color:white;
+}
+header .first-row {
+	border-bottom:1px solid rgba(0,0,0,0.3);
+
+	.call {
+		line-height: 40px;
+		margin:0;
+		font-weight: bold;
+	}
+}
+
+header .logo {
+	margin:1.1em 0;
+}
+nav {
+	float:right;
+
+	ul {
+		list-style:none;
+		margin:2.5em 0 0.5em;
+	}
+
+	li {
+		margin:0;
+		float:left;
+	}
+
+	a {
+		color: white;
+		display: block;
+		margin:0 0.5em;
+		padding:1em 0.5em;
+		border-radius: 2px;
+
+		&:hover {
+			background-color: @mltree_green_highlight;
+			color:white;
+		}
+	}
+}
+
+.hero {
+	text-align:center;
+	background:url(../images/photo_main.png) center center;
+	background-size:cover;
+	height:800px;
+	color:white;
+	position: relative;
+}
+.hero-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height:50%;
+	margin: 0;
+	font-size: 3em;
+	font-family: acknowledgementmedium, serif;
+	line-height: 1.1;
+
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+.hero-action,
+.hero-action:focus,
+.hero-action:hover {
+	border:3px solid;
+	color:white;
+	background:rgba(0,0,0,0.2);
+	display: block;
+	margin:1.1em auto 0;
+	font-size: 0.6em;
+	font-family: "open sans", sans-serif;
+}
