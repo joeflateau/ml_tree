@@ -2,26 +2,57 @@ doctype html
 html(lang="en")
   head
     title= "ML Tree Service"
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css')
     link(rel='stylesheet', href='assets/css/all.min.css')
     link(rel='stylesheet', href='assets/fonts/acknowledgement/stylesheet.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
   body
-    header
-      .first-row
-        .row
-          .large-9.columns
-          .large-3.columns
-            p.call Call Today: (315) 538-0222
-      .row
-        .large-8.columns
-          img.logo(src="assets/images/mltree_logo_header.png", alt="ML Tree Service")
-        .large-4.columns
-          nav
-            ul
-              li
-                a(href="default.html") Home
-              li
-                a(href="about.html") About
-              li
-                a(href="contact.html") Contact
-    main
-      block content
+    .off-canvas-wrap(data-offcanvas)
+      .inner-wrap
+        aside.right-off-canvas-menu
+          ul.off-canvas-list
+            li
+              label Menu
+            li
+              a(href=".") Home
+            li
+              a(href="about.html") About
+            li
+              a(href="contact.html") Contact
+        header
+          .first-row
+            .row
+              .large-9.columns
+              .large-3.columns
+                p.call Call Today: (315) 538-0222
+          .row
+            .large-8.small-9.columns
+              img.logo(src="assets/images/mltree_logo_header.png", alt="ML Tree Service")
+            .large-4.small-3.columns
+              nav.hide-for-large-up
+                a.right-off-canvas-toggle(href="#") Menu
+              nav.show-for-large-up
+                ul
+                  li
+                    a(href=".") Home
+                  li
+                    a(href="about.html") About
+                  li
+                    a(href="contact.html") Contact
+        main.clearfix
+          block content
+        footer
+          .footer-logo
+            img(src='assets/images/mltree_logo_footer.png', alt='ML Tree Service Logo')
+          .footer-copy
+            .row
+              p.medium-6.columns &copy; 2014 ML Tree Service
+              p.medium-3.columns 
+                a(href='.') Home
+                a(href='about.html') About
+                a(href='contact.html') Contact
+              p.medium-3.columns Call: (315) 538-0222
+        a.exit-off-canvas
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/js/foundation.min.js")
+    script(src="assets/scripts/all.min.js")

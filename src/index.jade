@@ -1,8 +1,36 @@
 extends ./layout.jade
 
+mixin service(name, description, additionalDescription)
+  div.medium-3.columns
+    .mltree-service(tabindex=0)
+      .name-desc
+        h4=name
+        p=description
+          span.additional=additionalDescription
+      span.button
+        span.more-info More Information
+        a.contact-us(href='contact.html') Contact Us
+
 block content
   div.hero
     p.hero-text ISA Certified Arborist Services
-      button.hero-action Find Out More
-  div.services.row
-    div.medium-12.columns
+      a.button.hero-action(href="contact.html") Find Out More
+        span.chevron
+  div.mltree-services.row
+    +service("Trimming", "As our trees grow and expand, they develop crossing/rubbing branches, as well as deadwood or dying limbs.")
+    +service("Removals", "Even though trees are a great feature on our property, sometimes we have no option besides removing them.", "We can handle trees of any size for removal, using correct rigging and cutting procedures. As with all of our work, we pride ourselves in excellent care and clean-up of your property.")
+    +service("Cabling", "Often as trees mature and increase in size and diameter, branches with poor crotches/connections will tend to worsen.")
+    +service("Emergency/ Storms", "Please contact us @ (585) 298-4470 if you require immediate attentuion due to a dangerous event.")
+  div.separator
+  div.row
+    div.small-3.columns.align-center
+      img(src="assets/images/isa_logo.png", alt="ISA Certified Logo")
+    div.small-9.columns
+      h3 Why hire a certified arborist?
+      p
+        :markdown
+          By definition, an arborist is a professional trained in the art and science
+          of planting, caring for, and maintaining individual trees. Michael has 
+          __over ten years__ of experience working in the tree care industry and is
+          ISA Certified. For more information please visit [www.is-arbor.com](http://www.is-arbor.com)
+  div.separator.blank

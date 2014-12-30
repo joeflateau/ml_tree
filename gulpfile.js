@@ -5,6 +5,7 @@ var gulp        = require('gulp'),
     uglify      = require('gulp-uglify'),
     jade        = require('gulp-jade'),
     concat      = require('gulp-concat'),
+    autoprefixer= require('gulp-autoprefixer'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
     express     = require('express'),
@@ -16,13 +17,15 @@ var gulp        = require('gulp'),
 // --- Basic Tasks ---
 gulp.task('css', function() {
   return gulp.src([
-      'src/assets/css/foundation.css',
-      'src/assets/css/site.less'])
+      'src/assets/css/*.less'])
     .pipe( 
       less( { 
         includePaths: ['src/assets/css'],
         errLogToConsole: true
       } ) )
+    .pipe( autoprefixer({
+      browsers: ['last 2 versions']
+    }) )
     .pipe( csso() )
     .pipe( concat('all.min.css'))
     .pipe( gulp.dest('dist/assets/css/') )
