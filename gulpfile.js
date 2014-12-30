@@ -85,5 +85,7 @@ gulp.task('fonts', function (){
   .pipe(gulp.dest('dist/assets/fonts'));
 });
 
+gulp.task('build', ['js','css','templates', 'images','fonts']);
+
 // Default Task
-gulp.task('default', ['js','css','templates', 'images','fonts','express','watch']);
+gulp.task('default', ['build','express','watch']);

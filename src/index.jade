@@ -6,6 +6,7 @@ mixin service(name, description, additionalDescription)
       .name-desc
         h4=name
         p=description
+          &nbsp;
           span.additional=additionalDescription
       span.button
         span.more-info More Information
@@ -14,13 +15,13 @@ mixin service(name, description, additionalDescription)
 block content
   div.hero
     p.hero-text ISA Certified Arborist Services
-      a.button.hero-action(href="contact.html") Find Out More
+      a.button.hero-action(href="#services") Find Out More
         span.chevron
-  div.mltree-services.row
-    +service("Trimming", "As our trees grow and expand, they develop crossing/rubbing branches, as well as deadwood or dying limbs.")
+  div.mltree-services.row#services
+    +service("Trimming", "As our trees grow and expand, they develop crossing/rubbing branches, as well as deadwood or dying limbs.", "Limbs also begin to grow close to our homes, driveways, wires or are just low in the visible landscape.  Following guidelines set forth by the International Society of Arboriculture (ISA), we are able to trim these limbs from your valuable trees, using correct pruning techniques.  Adhering to these rules, we perform proper cuts so the trees health is not compromised.  Trees are a huge asset to our yards and landscape, that we at M L Tree Service enjoy maintaining.")
     +service("Removals", "Even though trees are a great feature on our property, sometimes we have no option besides removing them.", "We can handle trees of any size for removal, using correct rigging and cutting procedures. As with all of our work, we pride ourselves in excellent care and clean-up of your property.")
-    +service("Cabling", "Often as trees mature and increase in size and diameter, branches with poor crotches/connections will tend to worsen.")
-    +service("Emergency/ Storms", "Please contact us @ (585) 298-4470 if you require immediate attentuion due to a dangerous event.")
+    +service("Cabling", "Often as trees mature and increase in size and diameter, branches with poor crotches/connections will tend to worsen.", "Before these branches begin to fail, a non-invasive cabling system can be installed.  By utilizing this type of cabling, no drilling is required through branches for the installation.  This system in turn helps maintain the structural integrity and health of your valued tree.")
+    +service("Emergency/ Storms", "Please contact us @ (585) 298-4470 if you require immediate attentuion due to a dangerous event.", "With climate changes and increasingly hazardous weather, the Rochester area definitely sees its’ share of storms.")
   div.separator
   div.row
     div.small-3.columns.align-center
