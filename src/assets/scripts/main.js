@@ -15,6 +15,11 @@ $(function(){
 		$(".focus").removeClass("focus");
 	});
 
+	$(window).on('keyup', function(e){
+		if (e.which !== 27) return;
+		$(".focus").removeClass("focus");
+	});
+
 	$("a[href^='#']").click(function(e){
 		e.preventDefault();
 		$("html, body")
