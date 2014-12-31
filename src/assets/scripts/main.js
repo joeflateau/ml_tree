@@ -3,6 +3,8 @@ $(function(){
 	
 	$(".mltree-service").click(function(e){
 		e.stopPropagation();
+		$("html, body")
+			.animate({scrollTop:$(this).parent().offset().top - 100});
 		$(".focus").removeClass("focus");
 		$(this).addClass("focus");
 	});
