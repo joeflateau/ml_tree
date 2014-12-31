@@ -14,6 +14,6 @@ $(function(){
 	$("a[href^='#']").click(function(e){
 		e.preventDefault();
 		$("html, body")
-			.animate({scrollTop:$($(this).attr("href")).offset().top - 50});
+			.animate({scrollTop:$($(this).attr("href")).offset().top - 100});
 	});
 });
