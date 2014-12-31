@@ -62,7 +62,7 @@ gulp.task('express', function() {
   gutil.log('Listening on port: 1337');
 });
 
-gulp.task('watch', function () {
+gulp.task('_watch', function () {
   livereload.listen(35729);
 
   gulp.watch('src/assets/css/site.less',['css']);
@@ -85,7 +85,6 @@ gulp.task('fonts', function (){
   .pipe(gulp.dest('dist/assets/fonts'));
 });
 
-gulp.task('build', ['js','css','templates', 'images','fonts']);
+gulp.task('watch', ['default','express','_watch']);
 
-// Default Task
-gulp.task('default', ['build','express','watch']);
+gulp.task('default', ['js','css','templates', 'images','fonts']);
