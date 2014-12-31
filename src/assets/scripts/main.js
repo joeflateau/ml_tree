@@ -1,6 +1,6 @@
 $(function(){
-	var offsetAmount = 100;
-	
+	var offsetAmount = 160;
+
 	$("body").foundation();
 	
 	$(".mltree-service").click(function(e){
