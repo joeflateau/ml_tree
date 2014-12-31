@@ -1,5 +1,5 @@
 $(function(){
-	var offsetAmount = 190;
+	var offsetAmount = 180;
 
 	$("body").foundation();
 	
