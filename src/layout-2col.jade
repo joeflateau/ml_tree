@@ -2,17 +2,21 @@ extends ./layout.jade
 
 block content
   .row
-    .medium-8.columns
+    .medium-8.columns.left-column
       block content-left
-    .medium-4.columns
+    .medium-4.columns.right-column
       block content-right
         aside
           h3 ML Tree Service Offers
           .separator.leaf
-          p Trimming
-          p Removals
-          p Cabling
-          p Emergency/Storage
+          p 
+            | Trimming
+            br
+            |Removals
+            br
+            |Cabling
+            br
+            |Emergency/Storage
           .separator.leaf
           p
             :markdown
