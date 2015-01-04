@@ -137,12 +137,17 @@ main {
 
 .hero {
 	text-align:center;
-	background:url(../images/photo_main.png) top center;
+	background:url(../images/photo_main@medium.jpg) top center;
 	background-size:cover;
 	height:65vh;
 	color:white;
 	position: relative;
 	font-size: 1.5vh;
+}
+@media screen and (min-width: 751px) {
+	.hero {
+		background-image:url(../images/photo_main@large.jpg);
+	}
 }
 .hero-text {
 	position: absolute;
@@ -281,10 +286,16 @@ main {
 }
 
 .footer-logo {
-	background: url(../images/footer_photo.png) center no-repeat;
+	background: url(../images/footer_photo@medium.png) center no-repeat;
 	height:340px;
 	text-align: center;
 	padding-top: 90px;
+}
+
+@media screen and (min-width: 751px) {
+	.footer-logo {
+		background-image:url(../images/footer_photo@large.jpg);
+	}
 }
 
 .footer-copy {

@@ -12,7 +12,9 @@ var gulp        = require('gulp'),
     express     = require('express'),
     app         = express(),
     marked      = require('marked'), // For :markdown filter in jade
-    path        = require('path');
+    path        = require('path'),
+    gm          = require('gulp-gm'),
+    rename      = require('gulp-rename');
 
 
 // --- Basic Tasks ---
@@ -48,12 +50,34 @@ gulp.task('templates', function() {
     .pipe( livereload());
 });
 
-gulp.task('images', function() {
+gulp.task('images', ['images-large', 'images-medium'], function() {
   return gulp.src('src/assets/images/*.png')
     .pipe(imagemin({
       progressive:true
     }))
     .pipe(gulp.dest('dist/assets/images'));
+});
+
+gulp.task('images-large', function(){
+  return gulp.src('src/assets/images/*@responsive.png')
+    .pipe(gm(function(gmfile){
+      return gmfile.resize(1500).setFormat("jpg");
+    }))
+    .pipe(rename(function(path){
+      path.basename = path.basename.replace("@responsive", "@large");
+    }))
+    .pipe(gulp.dest('dist/assets/images')); 
+});
+
+gulp.task('images-medium', function(){
+  return gulp.src('src/assets/images/*@responsive.png')
+    .pipe(gm(function(gmfile){
+      return gmfile.resize(750).setFormat("jpg");
+    }))
+    .pipe(rename(function(path){
+      path.basename = path.basename.replace("@responsive", "@medium");
+    }))
+    .pipe(gulp.dest('dist/assets/images')); 
 });
 
 gulp.task('express', function() {
