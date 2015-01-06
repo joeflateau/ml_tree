@@ -50,7 +50,7 @@ gulp.task('templates', function() {
     .pipe( livereload());
 });
 
-gulp.task('images', ['images-large', 'images-medium'], function() {
+gulp.task('images', ['images-large', 'images-medium', 'images-original'], function() {
   return gulp.src('src/assets/images/*.png')
     .pipe(imagemin({
       progressive:true
@@ -76,6 +76,17 @@ gulp.task('images-medium', function(){
     }))
     .pipe(rename(function(path){
       path.basename = path.basename.replace("@responsive", "@medium");
+    }))
+    .pipe(gulp.dest('dist/assets/images')); 
+});
+
+gulp.task('images-original', function(){
+  return gulp.src('src/assets/images/*@responsive.png')
+    .pipe(gm(function(gmfile){
+      return gmfile.setFormat("jpg");
+    }))
+    .pipe(rename(function(path){
+      path.basename = path.basename.replace("@responsive", "@original");
     }))
     .pipe(gulp.dest('dist/assets/images')); 
 });

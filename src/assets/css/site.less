@@ -139,14 +139,23 @@ main {
 	text-align:center;
 	background:url(../images/photo_main@medium.jpg) top center;
 	background-size:cover;
-	height:65vh;
+	height:300px;
 	color:white;
 	position: relative;
-	font-size: 1.5vh;
+	font-size: 12px;
 }
 @media screen and (min-width: 751px) {
 	.hero {
+		height:500px;
+		font-size:14px;
 		background-image:url(../images/photo_main@large.jpg);
+	}
+}
+@media screen and (min-width: 1501px) {
+	.hero {
+		height:600px;
+		font-size:16px;
+		background-image:url(../images/photo_main@original.jpg);
 	}
 }
 .hero-text {
@@ -154,8 +163,8 @@ main {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height:65vh;
-	padding:22vh 5vw 0;
+	height:100%;
+	padding:12% 0 0;
 	margin: 0;
 	font-size: 3em;
 	font-family: acknowledgementmedium, serif;
@@ -287,6 +296,7 @@ main {
 
 .footer-logo {
 	background: url(../images/footer_photo@medium.png) center no-repeat;
+	background-size: cover;
 	height:340px;
 	text-align: center;
 	padding-top: 90px;
@@ -295,6 +305,12 @@ main {
 @media screen and (min-width: 751px) {
 	.footer-logo {
 		background-image:url(../images/footer_photo@large.jpg);
+	}
+}
+
+@media screen and (min-width: 1501px) {
+	.footer-logo {
+		background-image:url(../images/footer_photo@original.jpg);
 	}
 }
 
